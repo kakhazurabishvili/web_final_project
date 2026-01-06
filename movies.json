@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Spider-Man: No Way Home",
+    "rating": 8.2,
+    "image": "images/spider-man.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Home Alone",
+    "rating": 7.8,
+    "image": "images/home alone.jpg"
+  },
+  {
+    "id": 3,
+    "title": "IT (2017)",
+    "rating": 7.3,
+    "image": "images/IT.jpg"
+  },
+  {
+    "id": 4,
+    "title": "The Mask",
+    "rating": 7.0,
+    "image": "images/mask.avif"
+  },
+  {
+    "id": 5,
+    "title": "Shawshank Redemption",
+    "rating": 9.3,
+    "image": "images/shawshank.avif"
+  },
+  {
+    "id": 6,
+    "title": "Seven",
+    "rating": 8.6,
+    "image": "images/seven.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Shutter Island",
+    "rating": 8.2,
+    "image": "images/shutter-island.webp"
+  },
+  {
+    "id": 8,
+    "title": "A Bronx Tale",
+    "rating": 7.8,
+    "image": "images/bronx-tale.jpg"
+  }
+]

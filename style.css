@@ -1,0 +1,521 @@
+/* ------------------- 1. ფერების ცვლადები ------------------- */
+:root {
+    --gray: #1a1a1a;
+    --black: #121212;
+    --orange: #E59809;
+    --search-bg: #393939;
+    --white: #ffffff;
+    --transition: 0.3s ease;
+}
+
+@keyframes cardEntrance {
+    from { 
+        opacity: 0; 
+        transform: translateY(30px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* ------------------- 2. ზოგადი პარამეტრები ------------------- */
+* {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: var(--gray);
+    color: var(--white);
+}
+
+/* ------------------- 3. ჰედერი ------------------- */
+.main-header {
+    background-color: var(--black);
+    height: 90px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.main-header.sticky {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(18,18,18,0.95);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    height: 70px;
+    transition: all 0.3s ease;
+}
+
+.header-container {
+    width: 100%;
+    max-width: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 84px;
+}
+
+.burger-menu { 
+    display: none; 
+}
+
+/* ------------------- 4. მარცხენა მხარე: ლოგო და მენიუ ------------------- */
+.left-side { 
+    display: flex; 
+    align-items: center; 
+    gap: 40px; 
+}
+
+.logo {
+    color: var(--white); 
+    font-size: 32px; 
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex; 
+    align-items: center; 
+    gap: 38px;
+}
+
+.nav-menu a, .nav-menu .dropbtn {
+    color: var(--white);
+    text-decoration: none;
+    margin-left: 0; 
+    font-size: 20px;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.nav-menu a:first-child, .nav-menu .dropbtn:first-child { 
+    margin-left: 0; 
+}
+
+.nav-menu a:hover, .nav-menu a.active, .nav-menu .dropbtn:hover {
+    color: var(--orange);
+}
+
+/* Dropdown for Genres */
+.nav-menu .dropdown {
+    position: relative;
+}
+
+.nav-menu .dropbtn {
+    cursor: pointer;
+}
+
+.nav-menu .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--black);
+    min-width: 160px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    z-index: 1000;
+    flex-direction: column;
+}
+
+.nav-menu .dropdown-content a {
+    display: block;
+    color: var(--white);
+    padding: 10px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.nav-menu .dropdown-content a:hover {
+    background-color: var(--orange);
+    color: var(--black);
+}
+
+/* Show dropdown on hover */
+.nav-menu .dropdown:hover .dropdown-content { 
+    display: flex; 
+}
+
+/* Show dropdown on mobile click */
+.nav-menu .dropdown-content.show { 
+    display: flex; 
+}
+
+/* ------------------- 5. მარჯვენა მხარე ------------------- */
+.right-side { 
+    display: flex; 
+    align-items: center; 
+    gap: 20px; 
+}
+
+.search-box {
+    background-color: var(--search-bg);
+    border-radius: 20px;
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+}
+
+.search-box input {
+    background: transparent;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    color: var(--white);
+    outline: none;
+    padding: 5px;
+    width: 150px;
+}
+
+.search-box input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.login-btn {
+    background-color: var(--orange);
+    height: 36px;
+    width: 100px;
+    color: var(--white);
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.login-btn:hover { 
+    opacity: 0.9; 
+    transform: scale(1.05); 
+}
+
+/* ------------------- Hero ------------------- */
+.hero {
+    height: 600px;
+    width: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.8) 20%, transparent 100%), 
+                url('images/batman.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 84px;
+}
+
+.hero-content { 
+    max-width: 600px; 
+}
+
+.hero-content h1 { 
+    font-size: 80px; 
+    font-weight: 900; 
+    line-height: 1; 
+    margin-bottom: 20px; 
+    text-transform: uppercase; 
+}
+
+.hero-content p { 
+    font-size: 18px; 
+    opacity: 0.8; 
+    margin-bottom: 26px; 
+    line-height: 1.6; 
+}
+
+.watch-now-btn {
+    background-color: var(--orange);
+    color: var(--white);
+    height: 50px;
+    width: 280px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: lowercase;
+    font-family: sans-serif;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: transform 0.2s ease;
+}
+
+.watch-now-btn:hover { 
+    transform: scale(1.03); 
+}
+
+/* ------------------- Trending Section ------------------- */
+.trending-section { 
+    background-color: var(--gray); 
+    padding: 60px 84px; 
+}
+
+.section-title { 
+    color: var(--white); 
+    font-size: 32px; 
+    font-weight: bold; 
+    margin-bottom: 40px; 
+    position: relative; 
+}
+
+/* ------------------- Movies Grid ------------------- */
+.movies-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px 30px;
+    padding: 0 84px 60px;
+    justify-items: center;
+}
+
+.movie-card { 
+    display: flex; 
+    flex-direction: column; 
+    width: 100%; 
+    animation: cardEntrance 0.7s ease-out forwards; 
+}
+
+.movie-card img { 
+    width: 280px; 
+    height: 475px; 
+    max-width: 100%; 
+    height: auto; 
+    aspect-ratio: 280/475; 
+    object-fit: cover; 
+    border-radius: 12px; 
+    margin-bottom: 12px; 
+    transition: transform 0.3s ease; 
+}
+
+.movie-card:hover img { 
+    transform: scale(1.03); 
+    cursor: pointer; 
+}
+
+.movie-card h3 { 
+    color: #fff; 
+    font-size: 20px; 
+    font-weight: bold; 
+    margin-top: 15px; 
+    display: -webkit-box; 
+    -webkit-box-orient: vertical; 
+    overflow: hidden; 
+}
+
+.movie-card .rating { 
+    color: var(--orange); 
+    font-size: 20px; 
+    font-weight: bold; 
+    margin-top: 0; 
+    display: flex; 
+    align-items: center; 
+}
+
+.movie-card .rating::before { 
+    margin-right: 4px; 
+}
+
+/* ------------------- Footer ------------------- */
+.main-footer { 
+    background-color: var(--black); 
+    color: var(--white); 
+    padding: 40px 78px; 
+    font-family: sans-serif; 
+}
+
+.footer-container { 
+    display: grid; 
+    grid-template-columns: repeat(4,1fr); 
+    gap: 100px; 
+    max-width: 1440px; 
+    margin: 0 auto; 
+}
+
+.footer-column h3 { 
+    font-size: 26px; 
+    font-weight: bold; 
+    margin-bottom: 10px; 
+}
+
+.footer-column p, .footer-column a { 
+    font-size: 14px; 
+    font-weight: bold; 
+    color: #aaaaaa; 
+    text-decoration: none; 
+    margin-bottom: 2px; 
+}
+
+.footer-column a:hover { 
+    color: var(--white); 
+}
+
+.copyright { 
+    display: flex; 
+    align-items: flex-start; 
+}
+
+/* Footer socials - column layout */
+.socials {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ------------------- Modal ------------------- */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: var(--black);
+    padding: 40px;
+    border-radius: 12px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-content h2 {
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+}
+
+.modal-content input:focus {
+    outline: 2px solid var(--orange);
+}
+
+.modal-content button {
+    background-color: var(--orange);
+    color: var(--white);
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modal-content button:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+}
+
+.close {
+    align-self: flex-end;
+    font-size: 28px;
+    color: var(--white);
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+/* --------------------- MOBILE --------------------- */
+@media (max-width: 420px) {
+
+    /* Header */
+    .header-container { padding: 0 16px; }
+    .nav-menu, .right-side { display: none; }
+    .burger-menu { display: flex; flex-direction: column; gap: 5px; cursor: pointer; }
+    .burger-menu span { width: 25px; height: 3px; background-color: var(--white); transition: var(--transition); }
+
+    /* Mobile Nav Menu Open */
+    .nav-menu.open { 
+        display: flex; 
+        flex-direction: column; 
+        position: absolute; 
+        top: 90px; 
+        left: 0; 
+        width: 100%; 
+        background-color: var(--black); 
+        padding: 20px; 
+        gap: 20px; 
+        z-index: 999; 
+    }
+
+    .nav-menu.open a, .nav-menu.open .dropbtn { 
+        margin-left: 0; 
+        font-size: 18px; 
+    }
+
+    /* Hero */
+    .hero { 
+        height: 420px; 
+        padding: 0 16px 30px; 
+        display: flex; 
+        flex-direction: column; 
+        justify-content: flex-end; 
+        align-items: center; 
+    }
+
+    .hero-content { 
+        text-align: center; 
+        margin-bottom: 20px; 
+    }
+
+    .hero-content h1 { font-size: 42px; }
+    .hero-content p { font-size: 14px; }
+    .watch-now-btn { width: 200px; font-size: 20px; height: 44px; }
+
+    /* Trending Title */
+    .trending-section .section-title { 
+        font-size: 28px; 
+        line-height:1.2; 
+        text-align:center; 
+        margin-bottom:30px; 
+        white-space:normal; 
+    }
+
+    /* Movies grid */
+    .movies-grid { 
+        grid-template-columns: repeat(2,1fr); 
+        padding:0 16px 40px; 
+        gap:20px; 
+    }
+
+    /* Footer */
+    .footer-container { 
+        grid-template-columns:1fr; 
+        gap:30px; 
+        text-align:center; 
+    }
+
+    .footer-column { 
+        display:flex; 
+        flex-direction:column; 
+        align-items:center; 
+    }
+
+    .footer-column a { 
+        margin-bottom:4px; 
+    }
+
+}

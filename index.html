@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie.ge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+
+            <div class="left-side">
+                <div class="logo">Movie.ge</div>
+                <nav class="nav-menu">
+                    <a href="#" class="active">Home</a>
+
+                    <div class="dropdown">
+                        <a href="#" class="dropbtn">ფილმები ▾</a>
+                        <div class="dropdown-content">
+                            <a href="#">Action</a>
+                            <a href="#">Drama</a>
+                            <a href="#">Comedy</a>
+                            <a href="#">Horror</a>
+                            <a href="#">Thriller</a>
+                        </div>
+                    </div>
+
+                    <a href="#">სერიალები</a>
+                </nav>
+            </div>
+
+            <div class="right-side">
+                <div class="search-box">
+                    <input type="text" placeholder="Search..." id="searchInput">
+                    <i class="search-icon">🔍️</i> 
+                </div>
+                <a href="#" class="login-btn">Login</a>
+            </div>
+
+            <div class="burger-menu" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>The Dark Knight</h1>
+            <p>
+                The Dark Knight is a 2008 superhero film directed by Christopher Nolan,
+                from a screenplay co-written with his brother Jonathan.
+            </p>
+            <a href="#" class="watch-now-btn">watch now</a>
+        </div>
+    </section>
+
+    <section class="trending-section">
+        <div class="container">
+            <h2 class="section-title">Trending movies</h2>
+        </div>
+    </section>
+
+    <div class="movies-grid"></div>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            
+            <div class="footer-column">
+                <h3>Movie.ge</h3>
+                <p>შენი საყვარელი ფილმები და სერიალები ერთ სივრცეში. უყურე ხარისხიანად</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>კონტაქტი</h3>
+                <p>Email: info@movie.ge</p>
+                <p>Tel: +995 32 2 00 00 00</p>
+                <p>მისამართი: თბილისი, საქართველო</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>სოციალური ქსელები</h3>
+                <div class="socials">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">TikTok</a>
+                </div>
+            </div>
+
+
+            <div class="footer-column copyright">
+                <p>© 2026 Movie.ge. ყველა უფლება დაცულია</p>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <input type="text" id="modalUsername" placeholder="Username">
+            <input type="password" id="modalPassword" placeholder="Password">
+            <button id="modalLoginBtn">Login</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
